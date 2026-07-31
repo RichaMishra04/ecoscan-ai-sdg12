@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoScan AI - Smart Waste Sorting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🌱 EcoScan AI</h1>
+      <p>Identify waste & get instant recycling tips (SDG 12 & 13)</p>
+    </header>
+
+    <main>
+      <!-- Camera / Upload Area -->
+      <section class="scanner-card">
+        <video id="webcam" autoplay playsinline style="display:none;"></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <img id="preview" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='260' viewBox='0 0 400 260'><rect width='400' height='260' fill='%23f1f5f9'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='16' fill='%2364748b'>Upload or Capture Image</text></svg>" alt="Preview">
+
+        <div class="button-group">
+          <button id="startCamBtn">📷 Open Camera</button>
+          <button id="captureBtn" style="display:none;">⚡ Scan Item</button>
+          <label for="fileInput" class="upload-btn">📁 Upload Photo</label>
+          <input type="file" id="fileInput" accept="image/*" style="display:none;">
+        </div>
+      </section>
+
+      <!-- AI Results Area -->
+      <section class="result-card">
+        <h2>Analysis Results</h2>
+        <div id="loading" style="display:none;">🔍 AI is analyzing the item...</div>
+        <div id="resultOutput">
+          <p>Scan or upload an item to get disposal instructions.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
